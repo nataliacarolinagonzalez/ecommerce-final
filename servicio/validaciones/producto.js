@@ -4,12 +4,12 @@ import Joi from 'joi'
 
 const validar = producto => {
     const productoSchema = Joi.object({
-        nombre: Joi.string().min(2).max(20).required(),
-        precio: Joi.number().required(),
+        nombre: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9. ñáéíóúÑÁÉÍÓÚ]{3,50}$')),
+        precio: Joi.number().required(), 
         stock: Joi.number().required(),
-        marca: Joi.string().required(),
-        categoria: Joi.string().required(),
-        detalles: Joi.string().required(),
+        marca: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9. ñáéíóúÑÁÉÍÓÚ]{1,50}$')),
+        categoria: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9. ñáéíóúÑÁÉÍÓÚ]{3,50}$')),
+        detalles: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9. ñáéíóúÑÁÉÍÓÚ]{3,50}$')),
         foto: Joi.string().required(),
         envio: Joi.required()
     })

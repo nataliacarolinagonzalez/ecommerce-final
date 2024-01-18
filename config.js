@@ -6,7 +6,7 @@ dotenv.config()
 const PORT = process.env.PORT || 8080 
 
 const MODO_PERSISTENCIA = process.env.MODO_PERSISTENCIA || 'FILE'
-const STRCNX = process.env.STRCNX || 'mongodb://127.0.0.1'
+const STRCNX = process.env.STRCNX || 'mongodb://127.0.0.1:27017/' //'mongodb://127.0.0.1'
 const BASE = process.env.BASE || 'test'
 const FTP_HOST = process.env.FTP_HOST || ''
 const FTP_USER = process.env.FTP_USER || ''
